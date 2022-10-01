@@ -7,17 +7,21 @@ import io.cucumber.java.After;
 import io.cucumber.java.Before;
 
 public class Hook extends BaseClass {
-	
+
 	
 	@Before
 	public static void initialize() {
-	 setUp();
+		//When running in parallel, the code below needs to be initialized. 
+		//BaseClass.initializepropertyfile();
+		//setUp(property.get().getProperty("BrowserType"));
+		setUp("firefox");
+		getDriver().navigate().to("https://www.facebook.com/");	
 		
 	}
 	
 	@After
 	public static void tearDown() {
-		driver.quit();
+		getDriver().quit();
 		
 		
 	}

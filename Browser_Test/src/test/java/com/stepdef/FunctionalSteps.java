@@ -11,7 +11,9 @@ public class FunctionalSteps extends BaseClass {
 	
 	@Given("This is a test")
 	public void this_is_a_test() {
-	    driver.findElement(By.id("email")).sendKeys("emailonly");
+		
+		
+	    getDriver().findElement(By.id("email")).sendKeys("emailonly");
 	    
 	}
 

@@ -12,13 +12,15 @@ public class Steps extends BaseClass {
 	
 	@Given("I can open browser")
 	public void i_can_open_browser() {
-	   driver.findElement(By.id("email")).sendKeys("test@email.com"); 
+		
+		
+	   getDriver().findElement(By.id("email")).sendKeys("test@email.com"); 
 	    
 	}
 
 	@When("I click on something")
 	public void i_click_on_something() {
-	    driver.findElement(By.id("pass")).sendKeys("hello");
+	    //getDriver().findElement(By.id("pass")).sendKeys("hello");
 	    
 	}
 

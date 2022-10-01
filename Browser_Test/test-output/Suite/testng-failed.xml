@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite guice-stage="DEVELOPMENT" name="Failed suite [Suite]">
-  <test thread-count="5" name="ChromeTest(failed)">
+<suite thread-count="2" guice-stage="DEVELOPMENT" name="Failed suite [Suite]" parallel="classes">
+  <test thread-count="2" name="ChromeTest(failed)" parallel="classes">
     <parameter name="browserType" value="chrome"/>
     <classes>
       <class name="com.runner.MyRunner">
         <methods>
           <include name="beforeClass"/>
-          <include name="runScenario"/>
+          <include name="runScenario" invocation-numbers="0 1"/>
           <include name="afterClass"/>
           <include name="tearDownClass"/>
           <include name="setUpClass"/>
@@ -15,13 +15,13 @@
       </class> <!-- com.runner.MyRunner -->
     </classes>
   </test> <!-- ChromeTest(failed) -->
-  <test thread-count="5" name="FirefoxTest(failed)">
+  <test thread-count="2" name="FirefoxTest(failed)" parallel="classes">
     <parameter name="browserType" value="firefox"/>
     <classes>
       <class name="com.runner.MyRunner">
         <methods>
           <include name="beforeClass"/>
-          <include name="runScenario"/>
+          <include name="runScenario" invocation-numbers="0 1"/>
           <include name="afterClass"/>
           <include name="tearDownClass"/>
           <include name="setUpClass"/>
