@@ -13,14 +13,13 @@ stage('Test')
 {
 steps{
 echo "Testing the Code.........."
-bat "mvn test -f Browser_Test/pom.xml"
+bat "mvn install -f Browser_Test/pom.xml"
 }
 }
 stage('Compile') 
 {
 steps{
 echo "Compiling the Project.........."
-bat "mvn compile -f Browser_Test/pom.xml"
 }
 }
 stage('Deploy') 
