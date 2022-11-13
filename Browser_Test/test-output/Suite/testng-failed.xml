@@ -1,27 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite thread-count="2" guice-stage="DEVELOPMENT" name="Failed suite [Suite]" parallel="classes">
-  <test thread-count="2" name="ChromeTest(failed)" parallel="classes">
-    <parameter name="browserType" value="chrome"/>
-    <classes>
-      <class name="com.runner.MyRunner">
-        <methods>
-          <include name="beforeClass"/>
-          <include name="runScenario" invocation-numbers="0 1"/>
-          <include name="afterClass"/>
-          <include name="tearDownClass"/>
-          <include name="setUpClass"/>
-        </methods>
-      </class> <!-- com.runner.MyRunner -->
-    </classes>
-  </test> <!-- ChromeTest(failed) -->
-  <test thread-count="2" name="FirefoxTest(failed)" parallel="classes">
+<suite thread-count="3" guice-stage="DEVELOPMENT" name="Failed suite [Suite]" parallel="tests">
+  <test thread-count="3" name="FirefoxTest(failed)" parallel="tests">
     <parameter name="browserType" value="firefox"/>
     <classes>
       <class name="com.runner.MyRunner">
         <methods>
           <include name="beforeClass"/>
-          <include name="runScenario" invocation-numbers="0 1"/>
+          <include name="runScenario" invocation-numbers="0"/>
           <include name="afterClass"/>
           <include name="tearDownClass"/>
           <include name="setUpClass"/>
@@ -29,4 +15,32 @@
       </class> <!-- com.runner.MyRunner -->
     </classes>
   </test> <!-- FirefoxTest(failed) -->
+  <test thread-count="3" name="ChromeTest(failed)" parallel="tests">
+    <parameter name="browserType" value="chrome"/>
+    <classes>
+      <class name="com.runner.MyRunner">
+        <methods>
+          <include name="beforeClass"/>
+          <include name="runScenario" invocation-numbers="0"/>
+          <include name="afterClass"/>
+          <include name="tearDownClass"/>
+          <include name="setUpClass"/>
+        </methods>
+      </class> <!-- com.runner.MyRunner -->
+    </classes>
+  </test> <!-- ChromeTest(failed) -->
+  <test thread-count="3" name="EdgeTest(failed)" parallel="tests">
+    <parameter name="browserType" value="edge"/>
+    <classes>
+      <class name="com.runner.MyRunner">
+        <methods>
+          <include name="beforeClass"/>
+          <include name="runScenario" invocation-numbers="0"/>
+          <include name="afterClass"/>
+          <include name="tearDownClass"/>
+          <include name="setUpClass"/>
+        </methods>
+      </class> <!-- com.runner.MyRunner -->
+    </classes>
+  </test> <!-- EdgeTest(failed) -->
 </suite> <!-- Failed suite [Suite] -->

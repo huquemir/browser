@@ -10,12 +10,14 @@ import org.testng.annotations.Test;
 import com.basepage.BaseClass;
 import com.hooks.Hook;
 
+import io.cucumber.core.options.Constants;
 import io.cucumber.testng.AbstractTestNGCucumberTests;
 import io.cucumber.testng.CucumberOptions;
 
 
 @CucumberOptions(
 		features = {"Features/"},
+		plugin = {"pretty","com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"},
 		glue = {"com.stepdef","com.hooks"},
 		monochrome = true
 		)

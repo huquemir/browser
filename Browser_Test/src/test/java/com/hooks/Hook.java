@@ -1,10 +1,14 @@
 package com.hooks;
 
 
+import java.io.IOException;
+
 import com.basepage.BaseClass;
+import com.util.Utilities;
 
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
+import io.cucumber.java.Scenario;
 
 public class Hook extends BaseClass {
 
@@ -20,7 +24,11 @@ public class Hook extends BaseClass {
 	}
 	
 	@After
-	public static void tearDown() {
+	public static void tearDown(Scenario scenario) throws IOException {
+		
+		if (scenario.isFailed()) {
+		    scenario.attach(Utilities.getByteScreenShot(), "image/png", "failed");
+		}
 		getDriver().quit();
 		
 		
