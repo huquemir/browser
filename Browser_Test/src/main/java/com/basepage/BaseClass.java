@@ -10,7 +10,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
-
+import org.openqa.selenium.firefox.FirefoxOptions;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
@@ -40,7 +40,9 @@ public class BaseClass {
 			driver.set(new ChromeDriver());
 		} else if (property.get().getProperty("BrowserType").equalsIgnoreCase("firefox")) {
 			WebDriverManager.firefoxdriver().setup();
-			driver.set(new FirefoxDriver());
+			FirefoxOptions options = new FirefoxOptions();
+			options.addArguments("--headless");
+			driver.set(new FirefoxDriver(options));
 		} else if (property.get().getProperty("BrowserType").equalsIgnoreCase("edge")){
 			WebDriverManager.edgedriver().setup();
 			driver.set(new EdgeDriver());
