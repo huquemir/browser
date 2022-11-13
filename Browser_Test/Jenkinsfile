@@ -22,7 +22,7 @@ steps{
 echo "Compiling the Project.........."
 cucumber buildStatus: "UNSTABLE",
                         fileIncludePattern: '**/cucumber.json',
-                        jsonReportDirectory: 'target'
+                        jsonReportDirectory: 'Browser_Test/target'
 }
 }
 stage('Deploy') 
