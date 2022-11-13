@@ -1,0 +1,33 @@
+pipeline{
+agent any
+stages 
+{
+stage('Build') 
+{
+steps{
+echo "Building the Code.........."
+sh "mvn clean -f Browser_Test/pom.xml"
+}
+}
+stage('Test') 
+{
+steps{
+echo "Testing the Code.........."
+sh "mvn test -f Browser_Test/pom.xml"
+}
+}
+stage('Compile') 
+{
+steps{
+echo "Compiling the Project.........."
+sh "mvn compile -f Browser_Test/pom.xml"
+}
+}
+stage('Deploy') 
+{
+steps{
+echo "Deploying the Project.........."
+}
+}
+}
+}
